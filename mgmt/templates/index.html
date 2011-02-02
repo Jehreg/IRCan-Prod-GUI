@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Manage your VPN</title>
+    <link href="{{ MEDIA_URL }}css/base.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="logo"><a href="{% url home %}"><img src="{{ MEDIA_URL }}images/logo.png" alt="Manage your VPN"></a></div>
+        <h1>Small header</h1>
+        <div id="auth">
+{% if request.user.is_authenticated %}
+            <span>{{ request.user.name }}</span><a href="{% url logout %}">Logout</a>
+{% else %}
+            <a href="{% url login %}">Login</a>
+{% endif %}
+        </div>
+    </div>
+    <div id="main_menu">
+        <h1>Your virtual machines:</h1>
+        <ul>
+            <li>VM1-Ubuntu-10.10-Openvz</li>
+            <li>VM2-OpenBSD-4.3</li>
+        </ul>
+    </div>
+    <div id="sub_container">
+        <div id="sub_menu">
+            <ul class="horiz-menu">
+                <li>General</li>
+                <li>Domain names</li>
+                <li>Run state</li>
+                <li>OpenVPN certificates</li>
+                <li>Firewall rules</li>
+                <li>Statistics</li>
+            </ul>
+        </div>
+        <div id="content">
+            {% block content %}<p>Main content goes here!</p>{% endblock %}
+        </div>
+    </div>
+    <div id="footer">
+        <p>&copy; Xelerance corp. 2011</p>
+    </div>
+</div>
+</body>
+</html>

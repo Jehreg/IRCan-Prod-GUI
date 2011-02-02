@@ -1,0 +1,110 @@
+/* Basic elements */
+body {
+    font-size: 1em;
+    font-family: Verdana,sans-serif;
+    margin: 0;
+    padding: 0;
+    background: none repeat 0 0 #FFFFFF;
+}
+a {
+    text-decoration: none;
+}
+img {
+    border: none;
+}
+
+/* General layout */
+#container {
+    width: 100%;
+    position: relative;
+}
+
+#header,#footer {
+    background-color: #1739E3;
+    color: white;
+}
+
+#header {
+    height: 75px;
+}
+#header h1,#auth {
+    position: absolute;
+}
+#header h1 {
+    top: 20px;
+    left: 24%;
+    margin: 0;
+}
+#logo {
+    position: relative;
+    width: 24%;
+}
+#logo img {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+#auth {
+    text-align: center;
+    top: 50px;
+    right: 20px;
+    width: 180px;
+    height: 15px;
+    padding: 5px;
+    background-color: white;
+    font-size: 0.7em;
+}
+
+#main_menu {
+    width: 24%;
+    min-height: 100px;
+    float: left;
+    background-color: #e0e4f9;
+    /*border-right: 1px solid black;*/
+    padding-top: 30px; /* push the list below the sub-menu */
+    font-size: 0.8em;
+}
+#main_menu h1 {
+    margin: 0 7%;
+    font-size: 1em;
+}
+
+#sub_container {
+    width: 76%;
+    float: right;
+}
+
+#sub_menu {
+    height: 30px;
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+
+#content {
+    padding: 0 15px;
+}
+
+#footer {
+    clear: both;
+    padding: 5px;
+    text-align: center;
+}
+#footer p {
+    margin: 0;
+}
+
+/* General purpose classes */
+ul.horiz-menu {
+    list-style-type: none;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin: 0;
+}
+ul.horiz-menu li {
+    display: inline;
+    padding: 0 5px;
+    background-color: #d3d6e7;
+    border: 1px solid black;
+}
+
