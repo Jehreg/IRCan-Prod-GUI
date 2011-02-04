@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('mgmt.views',
     url(r'^$', 'main', name="home"),
+    url(r'^certs/', 'certs', name="certs"),
 )
 
 urlpatterns += patterns('',

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    key = models.CharField(max_length=4096)
+    cert_key = models.CharField(max_length=4096)
 
 class Client(models.Model):
     name = models.CharField(max_length=128)
