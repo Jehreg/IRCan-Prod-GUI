@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Manage your VPN</title>
+    <link href="{{ MEDIA_URL }}css/base.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="logo"><a href="{% url home %}"><img src="{{ MEDIA_URL }}images/logo.png" alt="Manage your VPN"></a></div>
+        <h1>Small header</h1>
+        <div id="auth">{% block auth %}{% endblock %}</div>
+    </div>
+    {% block main_layout %}{% endblock %}
+    <div id="footer">
+        <p>&copy; Xelerance corp. 2011</p>
+    </div>
+</div>
+</body>
+</html>

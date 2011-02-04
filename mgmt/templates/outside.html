@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block auth %}
+            <a href="{% url login %}">Login</a>
+{% endblock %}
+
+{% block main_layout %}
+    <div id="content">
+        {% block content %}<p>Main content goes here!</p>{% endblock %}
+    </div>
+{% endblock %}
