@@ -1,24 +1,15 @@
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
-from django.conf import settings
-
-
-# wth, MEDIA_URL is supposed to be automatically in the context.
-main_ctx = {"MEDIA_URL": settings.MEDIA_URL}
-def extend_main_ctx(ext):
-     d = dict(main_ctx)
-     d.update(ext)
-     return d
+from django.template import RequestContext
 
 
 def main(request):
     if request.user.is_authenticated():
-        ctx = extend_main_ctx({
-            "first_name": request.user.first_name,
-            "last_name": request.user.last_name})
-        return render_to_response('inside.html', ctx)
+        ctx = { "first_name": request.user.first_name,
+            "last_name": request.user.last_name}
+        return render_to_response('inside.html', RequestContext(request, ctx))
     else:
-        return render_to_response('outside.html', main_ctx)
+        return render_to_response('outside.html', RequestContext(request))
 
 
 @login_required
@@ -28,8 +19,8 @@ def certs(request):
     from django.core.exceptions import ObjectDoesNotExist
     try:
         own = request.user.get_profile().cert_key
-        ctx = extend_main_ctx({"own_cert": own})
-        return render_to_response('certificates.html', ctx)
+        ctx = {"own_cert": own}
+        return render_to_response('certificates.html', RequestContext(request, ctx))
     except ObjectDoesNotExist, e:
         from django.http import Http404
         raise Http404
